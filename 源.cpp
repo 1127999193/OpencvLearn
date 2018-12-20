@@ -9,8 +9,6 @@
 using namespace std;
 using namespace cv;
 
-
-
 Mat Src;
 int main()
 {
@@ -35,7 +33,7 @@ int main()
 	{
 	//改变map_x & map_y的值.
 	map_x.at<float>(j, i) = static_cast<float>(srcImage.cols - i);
-	map_y.at<float>(j, i) = static_cast<float>( j);//srcImage.rows -
+	map_y.at<float>(j, i) = static_cast<float>(srcImage.rows - j);
 	}
 	}
 
