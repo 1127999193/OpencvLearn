@@ -1,9 +1,10 @@
 #include<iostream>
 #include<string>
+
 #include<opencv2/imgproc/imgproc.hpp>
 #include<opencv2/core/core.hpp>
 #include<opencv2/highgui/highgui.hpp>
-
+#include<opencv2/features2d/features2d.hpp>
 
 using namespace std;
 using namespace cv;
@@ -28,12 +29,12 @@ int main()
 	//【3】双层循环，遍历每一个像素点，改变map_x & map_y的值
 	for (int j = 0; j < srcImage.rows;j++)
 	{
-		for (int i = 0; i < srcImage.cols;i++)
-		{
-			//改变map_x & map_y的值. 
-			map_x.at<float>(j, i) = static_cast<float>(srcImage.cols - i);
-			map_y.at<float>(j, i) = static_cast<float>( j);//srcImage.rows -
-		}
+	for (int i = 0; i < srcImage.cols;i++)
+	{
+	//改变map_x & map_y的值.
+	map_x.at<float>(j, i) = static_cast<float>(srcImage.cols - i);
+	map_y.at<float>(j, i) = static_cast<float>( j);//srcImage.rows -
+	}
 	}
 
 	//【4】进行重映射操作
@@ -45,6 +46,12 @@ int main()
 
 	return 0;
 }
+
+
+
+
+
+
 
 /*
 //-----------------------------------【宏定义部分】--------------------------------------------  
