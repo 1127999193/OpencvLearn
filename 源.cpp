@@ -10,6 +10,8 @@ using namespace std;
 using namespace cv;
 
 
+
+Mat Src;
 int main()
 {
 	//【0】变量定义
